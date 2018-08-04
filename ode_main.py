@@ -108,7 +108,8 @@ ax3.set_ylabel('y')
 ax3.set_title('Numerical Solutions')
 
 positionVec = list(y[0] for y in yvalues)
-velocityVec = list(y[0] for y in yvalues)
+# velocityVec = list(y[0] for y in yvalues)
+velocityVec = 1
 # ax4.plot(list(y[0] for y in yvalues), list(y[1] for y1 in yvalues), 'g--', label = "y[1]") # plot y[1]
 # ax4.legend(loc=0) # place legend: 0=best, 1=top-right, 2=top-left, etc
 # ax4.set_xlabel('x')
