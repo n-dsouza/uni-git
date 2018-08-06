@@ -59,7 +59,7 @@ ax2.set_xlabel('x')
 ax2.set_ylabel('y')
 ax2.set_title('Numerical and Exact Solutions for y(x)=sin(ax)/a')
 
-plt.show()
+#plt.show()
 # uncomment this command (and comment the show command) to save a copy of your figure
 # plt.savefig('lab2_task1_euler.png', dpi = 300)
 
@@ -107,9 +107,14 @@ ax3.set_xlabel('t')
 ax3.set_ylabel('y')
 ax3.set_title('Numerical Solutions')
 
-positionVec = list(y[0] for y in yvalues)
+print(type(tvalues))
+print(type(yvalues))
+
+# yvalues = np.transpose(yvalues)
+
+# positionVec = list(y[0] for y in yvalues)
 # velocityVec = list(y[0] for y in yvalues)
-# ax4.plot(list(y[0] for y in yvalues), list(y[1] for y1 in yvalues), 'g--', label = "y[1]") # plot y[1]
+# ax4.plot(yvalues[0], yvalues[1], 'g--') # plot y[1]
 # ax4.legend(loc=0) # place legend: 0=best, 1=top-right, 2=top-left, etc
 # ax4.set_xlabel('x')
 # ax4.set_ylabel('v')
