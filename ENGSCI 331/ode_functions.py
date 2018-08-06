@@ -1,6 +1,6 @@
 # imports
 import numpy as np
-
+sup
 # this function is complete, do not modify it
 def euler_solve(f, x0, y0, x1, h, *args):
 	''' Compute solution to ODE using Euler method
