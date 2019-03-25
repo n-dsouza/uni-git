@@ -1,9 +1,9 @@
-PWD c:/Users/Noel D'Souza/Documents/Engineering/Assignments/760/Assignment 1
+PWD c:/Users/Noel D'Souza/Documents/Engineering/uni-git/ENGSCI 760/Assignment 1
 INPUT c:/texlive/2018/texmf.cnf
 INPUT c:/texlive/2018/texmf-dist/web2c/texmf.cnf
 INPUT c:/texlive/2018/texmf-var/web2c/pdftex/pdflatex.fmt
-INPUT c:/Users/Noel D'Souza/Documents/Engineering/Assignments/760/Assignment 1/ENGSCI 760 AS1 Noel D'Souza.tex
-OUTPUT c:/Users/Noel D'Souza/Documents/Engineering/Assignments/760/Assignment 1/ENGSCI 760 AS1 Noel D'Souza.log
+INPUT c:/Users/Noel D'Souza/Documents/Engineering/uni-git/ENGSCI 760/Assignment 1/ENGSCI 760 AS1 Noel D'Souza.tex
+OUTPUT c:/Users/Noel D'Souza/Documents/Engineering/uni-git/ENGSCI 760/Assignment 1/ENGSCI 760 AS1 Noel D'Souza.log
 INPUT c:/texlive/2018/texmf-dist/tex/latex/base/article.cls
 INPUT c:/texlive/2018/texmf-dist/tex/latex/base/article.cls
 INPUT c:/texlive/2018/texmf-dist/tex/latex/base/size12.clo
@@ -251,9 +251,9 @@ INPUT c:/texlive/2018/texmf-dist/tex/latex/hyperref/hpdftex.def
 INPUT c:/texlive/2018/texmf-dist/tex/latex/hyperref/hpdftex.def
 INPUT c:/texlive/2018/texmf-dist/tex/latex/oberdiek/rerunfilecheck.sty
 INPUT c:/texlive/2018/texmf-dist/tex/latex/oberdiek/rerunfilecheck.sty
-INPUT c:/Users/Noel D'Souza/Documents/Engineering/Assignments/760/Assignment 1/ENGSCI 760 AS1 Noel D'Souza.aux
-INPUT c:/Users/Noel D'Souza/Documents/Engineering/Assignments/760/Assignment 1/ENGSCI 760 AS1 Noel D'Souza.aux
-OUTPUT c:/Users/Noel D'Souza/Documents/Engineering/Assignments/760/Assignment 1/ENGSCI 760 AS1 Noel D'Souza.aux
+INPUT c:/Users/Noel D'Souza/Documents/Engineering/uni-git/ENGSCI 760/Assignment 1/ENGSCI 760 AS1 Noel D'Souza.aux
+INPUT c:/Users/Noel D'Souza/Documents/Engineering/uni-git/ENGSCI 760/Assignment 1/ENGSCI 760 AS1 Noel D'Souza.aux
+OUTPUT c:/Users/Noel D'Souza/Documents/Engineering/uni-git/ENGSCI 760/Assignment 1/ENGSCI 760 AS1 Noel D'Souza.aux
 INPUT c:/texlive/2018/texmf-dist/tex/latex/base/ts1cmr.fd
 INPUT c:/texlive/2018/texmf-dist/tex/latex/base/ts1cmr.fd
 INPUT c:/texlive/2018/texmf-dist/tex/latex/psnfss/t1ptm.fd
@@ -271,14 +271,14 @@ INPUT c:/texlive/2018/texmf-dist/tex/latex/hyperref/nameref.sty
 INPUT c:/texlive/2018/texmf-dist/tex/latex/hyperref/nameref.sty
 INPUT c:/texlive/2018/texmf-dist/tex/generic/oberdiek/gettitlestring.sty
 INPUT c:/texlive/2018/texmf-dist/tex/generic/oberdiek/gettitlestring.sty
-INPUT c:/Users/Noel D'Souza/Documents/Engineering/Assignments/760/Assignment 1/ENGSCI 760 AS1 Noel D'Souza.out
-INPUT c:/Users/Noel D'Souza/Documents/Engineering/Assignments/760/Assignment 1/ENGSCI 760 AS1 Noel D'Souza.out
-INPUT c:/Users/Noel D'Souza/Documents/Engineering/Assignments/760/Assignment 1/ENGSCI 760 AS1 Noel D'Souza.out
-INPUT c:/Users/Noel D'Souza/Documents/Engineering/Assignments/760/Assignment 1/ENGSCI 760 AS1 Noel D'Souza.out
-OUTPUT c:/Users/Noel D'Souza/Documents/Engineering/Assignments/760/Assignment 1/ENGSCI 760 AS1 Noel D'Souza.pdf
-INPUT c:/Users/Noel D'Souza/Documents/Engineering/Assignments/760/Assignment 1/ENGSCI 760 AS1 Noel D'Souza.out
-INPUT c:/Users/Noel D'Souza/Documents/Engineering/Assignments/760/Assignment 1/ENGSCI 760 AS1 Noel D'Souza.out
-OUTPUT c:/Users/Noel D'Souza/Documents/Engineering/Assignments/760/Assignment 1/ENGSCI 760 AS1 Noel D'Souza.out
+INPUT c:/Users/Noel D'Souza/Documents/Engineering/uni-git/ENGSCI 760/Assignment 1/ENGSCI 760 AS1 Noel D'Souza.out
+INPUT c:/Users/Noel D'Souza/Documents/Engineering/uni-git/ENGSCI 760/Assignment 1/ENGSCI 760 AS1 Noel D'Souza.out
+INPUT c:/Users/Noel D'Souza/Documents/Engineering/uni-git/ENGSCI 760/Assignment 1/ENGSCI 760 AS1 Noel D'Souza.out
+INPUT c:/Users/Noel D'Souza/Documents/Engineering/uni-git/ENGSCI 760/Assignment 1/ENGSCI 760 AS1 Noel D'Souza.out
+OUTPUT c:/Users/Noel D'Souza/Documents/Engineering/uni-git/ENGSCI 760/Assignment 1/ENGSCI 760 AS1 Noel D'Souza.pdf
+INPUT c:/Users/Noel D'Souza/Documents/Engineering/uni-git/ENGSCI 760/Assignment 1/ENGSCI 760 AS1 Noel D'Souza.out
+INPUT c:/Users/Noel D'Souza/Documents/Engineering/uni-git/ENGSCI 760/Assignment 1/ENGSCI 760 AS1 Noel D'Souza.out
+OUTPUT c:/Users/Noel D'Souza/Documents/Engineering/uni-git/ENGSCI 760/Assignment 1/ENGSCI 760 AS1 Noel D'Souza.out
 INPUT c:/texlive/2018/texmf-dist/fonts/tfm/adobe/times/ptmrc8t.tfm
 INPUT c:/texlive/2018/texmf-dist/fonts/tfm/adobe/times/ptmrc8t.tfm
 INPUT c:/texlive/2018/texmf-dist/fonts/tfm/adobe/times/ptmrc8t.tfm
@@ -420,9 +420,9 @@ INPUT c:/texlive/2018/texmf-dist/fonts/tfm/adobe/palatino/pplr8r.tfm
 INPUT c:/texlive/2018/texmf-dist/fonts/tfm/adobe/palatino/pplri8r.tfm
 INPUT c:/texlive/2018/texmf-dist/fonts/vf/adobe/palatino/pplr7t.vf
 INPUT c:/texlive/2018/texmf-dist/fonts/tfm/adobe/palatino/pplr8r.tfm
-INPUT c:/Users/Noel D'Souza/Documents/Engineering/Assignments/760/Assignment 1/ENGSCI 760 AS1 Noel D'Souza.aux
-INPUT c:/Users/Noel D'Souza/Documents/Engineering/Assignments/760/Assignment 1/ENGSCI 760 AS1 Noel D'Souza.out
-INPUT c:/Users/Noel D'Souza/Documents/Engineering/Assignments/760/Assignment 1/ENGSCI 760 AS1 Noel D'Souza.out
+INPUT c:/Users/Noel D'Souza/Documents/Engineering/uni-git/ENGSCI 760/Assignment 1/ENGSCI 760 AS1 Noel D'Souza.aux
+INPUT c:/Users/Noel D'Souza/Documents/Engineering/uni-git/ENGSCI 760/Assignment 1/ENGSCI 760 AS1 Noel D'Souza.out
+INPUT c:/Users/Noel D'Souza/Documents/Engineering/uni-git/ENGSCI 760/Assignment 1/ENGSCI 760 AS1 Noel D'Souza.out
 INPUT c:/texlive/2018/texmf-dist/fonts/enc/dvips/base/8r.enc
 INPUT c:/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb
 INPUT c:/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb

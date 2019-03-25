@@ -16,5 +16,13 @@
 *.tar
 *.zip
 
+*.aux
+*.fdb_latexmk
+*.fls
+*.log
+*.lol
+*.out
+*.gz
+
 # add an exception (using !) to the preceding rule to track a specific file
 #!package.json
