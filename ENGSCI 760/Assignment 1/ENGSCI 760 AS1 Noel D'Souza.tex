@@ -1,0 +1,257 @@
+\documentclass[12pt]{article}
+
+\usepackage[utf8]{inputenc} % Required for inputting international characters
+\usepackage[T1]{fontenc} % Output font encoding for international characters
+\usepackage{mathpazo} % Palatino font
+
+
+%%% PAGE DIMENSIONS
+\usepackage[margin=2.54cm]{geometry} % 1.27 is narrower!
+\geometry{a4paper} 
+
+%%% Font set to times new roman
+\usepackage{times}
+%%% Really good graphics package
+\usepackage{graphicx}
+
+% Insert {PDFS}
+\usepackage{pdfpages}
+
+% Change section spacing, remove the spacing
+\usepackage[compact]{titlesec}
+\titlespacing*{\section}{0pt}{*0}{*0}
+\titlespacing*{\subsection}{0pt}{*0}{*0}
+\titlespacing*{\subsubsection}{0pt}{*0}{*0}
+
+%%% Better floats
+\usepackage{float}
+
+
+\usepackage{tikz}
+\usepackage{wrapfig}
+
+%%% PACKAGES
+\usepackage{booktabs} % for much better looking tables
+\usepackage{amsmath} % for better maths
+\usepackage{paralist} % very flexible & customisable lists (eg. enumerate/itemize, etc.)
+\usepackage{verbatim} % adds environment for commenting out blocks of text & for better verbatim
+\usepackage{subfig} % make it possible to include more than one captioned figure/table in a single float
+\usepackage{mathtools} % matrices
+\usepackage{blkarray, bigstrut} % matrices
+
+\usepackage[framed,numbered]{matlab-prettifier} % enable inserting matlab code.
+\usepackage[parfill]{parskip}
+%\addtolength{\jot}{1em}
+\usepackage{amssymb}
+\usepackage{cancel}
+\usepackage{color}
+\usepackage{listings}
+\usepackage{pdflscape} % Enabling rotating pages into a landscape orientation.
+
+
+%%% HEADERS & FOOTERS
+\usepackage{fancyhdr} % This should be set AFTER setting up the page geometry
+\pagestyle{fancy} % options: empty , plain , fancy
+\renewcommand{\headrulewidth}{0pt} % customise the layout...
+\lhead{}\chead{}\rhead{}
+\lfoot{}\cfoot{\thepage}\rfoot{}
+
+%%% SECTION TITLE APPEARANCE
+\usepackage{sectsty}
+\renewcommand{\thesubsection}{\thesection.\alph{subsection}}
+
+%%% ToC (table of contents) APPEARANCE
+\usepackage[nottoc,notlof,notlot]{tocbibind} % Put the bibliography in the ToC
+\usepackage[titles,subfigure]{tocloft} % Alter the style of the Table of Contents
+\renewcommand{\cftsecfont}{\rmfamily\mdseries\upshape}
+\renewcommand{\cftsecpagefont}{\rmfamily\mdseries\upshape} % No bold!
+
+%%% Hyperlinking 
+\usepackage{hyperref}
+\begin{document}
+
+\begin{titlepage} % Suppresses displaying the page number on the title page and the subsequent page counts as page 1
+	\newcommand{\HRule}{\rule{\linewidth}{0.5mm}} % Defines a new command for horizontal lines, change thickness here
+	\center % Centre everything on the page
+	
+	%------------------------------------------------
+	%	Headings
+    %------------------------------------------------
+    
+	\textsc{\LARGE 2019}\\[1.5cm] % Main heading such as the name of your university/college
+	\textsc{\Large Semester 1}\\[0.5cm] % Major heading such as course name
+	% \textsc{\large Department of Engineering Science}\\[0.5cm] % Minor heading such as course title
+	
+	%------------------------------------------------
+	%	Title
+	%------------------------------------------------
+	
+	\HRule\\[0.4cm]
+	{\huge\bfseries ENGSCI 760 --- Assignment 1}\\[0.4cm] % Title of your document
+	\HRule\\[1cm]
+	
+	%------------------------------------------------
+	%	Author(s)
+	%------------------------------------------------
+	
+    \begin{minipage}[t]{0.4\textwidth}
+        \vspace{0pt}
+		\begin{center}
+			\large
+			Noel \textsc{D'Souza}\\ % Your name
+			\textit{ndso092}\\
+			\textit{449609993}
+		\end{center}
+	\end{minipage}
+	~
+    % \begin{minipage}[t]{0.4\textwidth}
+    %     \vspace{0pt}\raggedright
+	% 	\begin{flushright}
+	% 		\large
+	% 		\textit{Employer Details}\\
+    %         PwC \textsc{New Zealand} % Supervisor's name
+    %         \linebreak \linebreak
+    %         PwC Tower\\
+    %         Level 22, 188 Quay St\\
+    %         Auckland, 1010
+	% 	\end{flushright}
+	% \end{minipage}
+
+	% If you don't want a supervisor, uncomment the two lines below and comment the code above
+	%{\large\textit{Author}}\\
+	%John \textsc{Smith} % Your name
+	
+	%------------------------------------------------
+	%	Date
+	%------------------------------------------------
+	
+	\vfill\vfill\vfill % Position the date 3/4 down the remaining page
+	
+    {\large\today} % Date, change the \today to a set date if you want to be precise
+    % {\large 7 August, 2019}
+	
+	%------------------------------------------------
+	%	Logo
+	%------------------------------------------------
+	
+    % \vfill
+    
+    % \begin{minipage}[t]{0.4\textwidth}
+    %     \vspace{0pt}
+    %     \begin{flushleft}
+    %     \includegraphics[width=0.9\textwidth]{engtitle.png}\\[1cm]
+	% 	\end{flushleft}
+	% \end{minipage}
+	% ~
+    % \begin{minipage}[t]{0.4\textwidth}
+    %     \vspace{0pt}\raggedright
+	% 	\begin{flushright}
+    %         \includegraphics[width=0.45\textwidth]{pwc.png}\\[1cm]        
+	% 	\end{flushright}
+	% \end{minipage}
+
+
+    % \includegraphics[width=0.4\textwidth]{engtitle.png}\\[1cm] % Include a department/university logo - this will require the graphicx package
+	 
+	%----------------------------------------------------------------------------------------
+	
+	\vfill % Push the date up 1/4 of the remaining page
+	
+\end{titlepage}
+
+%------------------------------------------------
+%   Summary
+%------------------------------------------------
+
+\section{Joint Distributions}
+
+\subsection{Pairwise Independence?}
+
+Events A, B and C \textbf{are} pairwise independent. This is because Event A is independent of B and is also independent of C. Events B and C are also independent of each other. This means the outcomes in any \textbf{pair of events} are independent of each other
+
+\subsection{Mutual indepentence?}
+
+Events A, B and C \textbf{are not} mutually independent. This is because if we know the outcome of Event B and Event C, then we know with 100\% certainty the outcome of Event A. In other words, Event A is \textbf{dependent} on the intersection of Events B and C.
+
+\section{Markov Chains}
+
+\subsection{One-Step Transition Matrix}
+\begin{equation*}
+	\mathbf{P}=
+	\begin{blockarray}{*{5}{c} l}
+	  \begin{block}{*{5}{>{$\footnotesize}c<{$}} l}
+		U & G & A & P & S & \\
+	  \end{block}
+	  \begin{block}{[*{5}{c}]>{$\footnotesize}l<{$}}
+		0 & 0.4 & 0.3 & 0.2 & 0.1 \bigstrut[t]& U \\
+		0 & 1 & 0 & 0 & 0 & G \\
+		0 & 0 & 1 & 0 & 0 & A \\
+		0 & 0.4 & 0.3 & 0.2 & 0.1 & P \\
+		0 & 0 & 0 & 0 & 1 & S \\
+	  \end{block}
+	\end{blockarray}
+\end{equation*}
+
+\subsection{Limiting Distribution}
+	
+\begin{align*}
+	\text{Proportion of good items} & = \text{Probability that a given item is good} \\
+	& = \text{Pr(item reaches G in step 1 \textit{or} item reaches G in step 2 \textit{or} ...)} \\
+	& = \text{Pr(item good in step 1) + Pr(item good in step 2) + ...}\\
+	& = 0.4 + (0.2)(0.4) + (0.2)(0.2)(0.4) + (0.2)(0.2)^2(0.4) + ... \\
+	& = 0.4 + (0.2)(0.4)\sum_{k=0}^{\infty}{(0.2)^k}\\
+	& = 0.4 + \frac{0.08}{0.8}\\
+	& = 0.5
+\end{align*}
+
+\begin{align*}
+	\text{Proportion of average items} & = \text{Pr(average in step 1) + Pr(average in step 2) + ...}\\
+	& = 0.3 + (0.2)(0.3) + (0.2)(0.2)(0.3) + (0.2)(0.2)^2(0.3) + ... \\
+	& = 0.3 + (0.2)(0.3)\sum_{k=0}^{\infty}{(0.2)^k}\\
+	& = 0.3 + \frac{0.06}{0.8}\\
+	& = 0.375
+\end{align*}
+
+\begin{align*}
+	\text{Proportion of scrapped items} & = \text{Pr(scrap in step 1) + Pr(scrap in step 2) + ...}\\
+	& = 0.1 + (0.2)(0.1) + (0.2)(0.2)(0.1) + (0.2)(0.2)^2(0.1) + ... \\
+	& = 0.1 + (0.2)(0.1)\sum_{k=0}^{\infty}{(0.2)^k}\\
+	& = 0.1 + \frac{0.02}{0.8}\\
+	& = 0.125
+\end{align*}
+
+\subsection{Expected Profit From Unfinished Item}
+
+\begin{align*}
+\text{Expected profit} & = (50\times0.5) + (40\times0.375) - (10\times\sum_{k=0}^{\infty}{(0.175)^k}) - 20\\
+& = 25 + 15 - \frac{10}{1-0.175} - 20\\
+& = \$7.88
+\end{align*}
+
+\subsection{Updated One-Step Transition Matrix}
+\begin{equation*}
+	\mathbf{P_{new}}=
+	\begin{blockarray}{*{7}{c} l}
+	  \begin{block}{*{7}{>{$\footnotesize}c<{$}} l}
+		U & G & A & S & $P_1$ & $P_2$ & $P_3$ & \\
+	  \end{block}
+	  \begin{block}{[*{7}{c}]>{$\footnotesize}l<{$}}
+		0 & 0.4 & 0.3 & 0.1& 0.2 & 0 & 0\bigstrut[t]& U \\
+		0 & 1 & 0 & 0 & 0 & 0 & 0 & G \\
+		0 & 0 & 1 & 0 & 0 & 0 & 0 & A \\
+		0 & 0 & 0 & 1 & 0 & 0 & 0 & S \\
+		0 & 0.4 & 0.3 & 0.1 & 0 & 0.2 & 0 & $P_1$ \\
+		0 & 0.4 & 0.3 & 0.1 & 0 & 0 & 0.2 & $P_2$ \\
+		0 & 0 & 0 & 0 & 0 & 0 & 1 & $P_3$ \\
+	  \end{block}
+	\end{blockarray}
+\end{equation*}
+
+\section{Hidden Markov Model}
+
+\subsection{createTransitions}
+\subsection{createEmissions}
+\subsection{HMM}
+\subsection{main}
+
+\end{document}
