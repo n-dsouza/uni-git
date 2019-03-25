@@ -1,0 +1,20 @@
+# ignore a single file
+#mycode.class
+
+# ignore an entire directory
+#/mydebugdir/
+
+# ignore a file type
+*.json
+*.pdf
+*.7z
+*.dmg
+*.gz
+*.iso
+*.jar
+*.rar
+*.tar
+*.zip
+
+# add an exception (using !) to the preceding rule to track a specific file
+#!package.json
