@@ -96,9 +96,7 @@ def HMM(p,pi,b,y):
     gamma = np.zeros((m,n))
     phi = np.zeros((m,n))
 
-    ## You must complete the code below
-    for i in range(m):
-        gamma[i,0] = b[i,y[0]] * pi[i] # initialisation step
+    gamma[:,0] = b[:,y[0]] * pi[:] # initialisation step
 
     for t in range(1,n): # for each time step (each obsn)
         for k in range(m): # for each state 
