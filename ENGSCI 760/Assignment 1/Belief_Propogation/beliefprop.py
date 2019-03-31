@@ -13,8 +13,8 @@ def main():
 
     # This example is for arcs in our three-node network
     B.append(['G','O'])
-    B.append(['G','S'])
-    B.append(['O','T'])
+    B.append(['O','S'])
+    B.append(['G','T'])
     
     # Set up information struction (dictionary)
     info={}
@@ -24,22 +24,22 @@ def main():
 
     # Specify any given information for each event (a vector of 1s means there is no information given for that event.
     # If information is given for an event, place a 0 corresponding to any outcome that is impossible.
-    # N: info dictionary is a bunch of arrays
     # N: [1,1] means no information (that node is not an evidence node)
     # N: [1,0] or [0,1] means we HAVE information (this is an evidence node)
-    info['G']=np.array([0,1])
-    info['O']=np.array([1,1])
-    info['S']=np.array([1,0])
-    info['T']=np.array([1,0])
+    info['G']=np.array([1,1,1])
+    info['O']=np.array([1,1,1])
+    info['S']=np.array([1,1])
+    info['T']=np.array([1,1])
 
     # Specify prior and conditional distributions
-    M['A']=np.array([0.2,0.8]) # N: Prior distribution
-    M['B']=np.array([[0.8,0.2],[0.3,0.7]]) # N: Specified conditionals in terms of ROWS of matrices
-    M['C']=np.array([[0.6,0.4],[0.2,0.8]])
+    M['G']=np.array([0.2,0.4,0.4])
+    M['O']=np.array([[0.8,0.1,0.1],[0.5,0.3,0.2],[0.3,0.4,0.3]])
+    M['S']=np.array([[0.3,0.7],[0.2,0.8],[0.8,0.2]])
+    M['T']=np.array([[0.2,0.8],[0.4,0.6],[0.8,0.2]])
 
     #Specify the root node and a list of leaf nodes
-    root_node='A' # N: might be string
-    leaf_nodes=['C'] # N: List of leaf nodes: Node 3 is the ONLY leaf node in this network
+    root_node='G'
+    leaf_nodes=['S','T']
 
 ######################### USER INPUT ENDS HERE ############################
 
