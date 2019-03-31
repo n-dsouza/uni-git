@@ -12,24 +12,25 @@ def main():
     B=[]
 
     # This example is for arcs in our three-node network
-    B.append(['A','B']) # N: Arc from node 1 to 2
-    B.append(['B','C']) # N: Arc from node 2 to 3
+    B.append(['G','O'])
+    B.append(['G','S'])
+    B.append(['O','T'])
     
     # Set up information struction (dictionary)
     info={}
 
     # Set up conditional distribution structure (dictionary)
-    M={};
+    M={}
 
     # Specify any given information for each event (a vector of 1s means there is no information given for that event.
     # If information is given for an event, place a 0 corresponding to any outcome that is impossible.
     # N: info dictionary is a bunch of arrays
     # N: [1,1] means no information (that node is not an evidence node)
     # N: [1,0] or [0,1] means we HAVE information (this is an evidence node)
-    info['A']=np.array([0,1])
-    info['B']=np.array([1,1])
-    info['C']=np.array([1,0])
-    info['C']=np.array([1,0])
+    info['G']=np.array([0,1])
+    info['O']=np.array([1,1])
+    info['S']=np.array([1,0])
+    info['T']=np.array([1,0])
 
     # Specify prior and conditional distributions
     M['A']=np.array([0.2,0.8]) # N: Prior distribution
@@ -76,7 +77,7 @@ def main():
     while len(Q)!=0:
         i=Q.pop(0)
 
-        lambda_[i]=info[i];
+        lambda_[i]=info[i]
         if i in children:
             for j in children[i]:
                 lambda_[i]=lambda_[i]*lambda_sent[j]
@@ -92,9 +93,9 @@ def main():
     while len(Q)!=0:
         i=Q.pop(0)
         if i not in parent: # if the node is the root node, pi is set to be the prior distribution at the node
-            pi[i]=M[i].T;
+            pi[i]=M[i].T
         else: # otherwise, pi is the matrix product of the message from the parent and the conditional probability at the node
-            pi[i]=M[i].T.dot(pi_received[i]);
+            pi[i]=M[i].T.dot(pi_received[i])
     
         # compute a normalised belief vector
         BEL[i]=pi[i]*lambda_[i]
@@ -104,7 +105,7 @@ def main():
         if i in children:
             for j in children[i]:
                 pi_received[j]=BEL[i]/lambda_sent[j] 
-                pi_received[j]=pi_received[j]/sum(pi_received[j]);
+                pi_received[j]=pi_received[j]/sum(pi_received[j])
                 Q.append(j)
 
     # Display the updated distributions, given the information.
