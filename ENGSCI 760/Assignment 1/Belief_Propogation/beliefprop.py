@@ -4,34 +4,41 @@ def main():
 ######################## USER INPUT STARTS HERE ###########################
 
     # Specify the names of the nodes in the Bayesian network
-    nodes=[1,2,3]
+    # N: Can be characters OR strings
+    nodes=['G','O','S','T']
 
     # Defining arcs which join pairs of nodes (nodes are indexed 1...N)
+    # N: Arcs defined as a list (B)
     B=[]
 
-    B.append([1,2])
-    B.append([2,3])
+    # This example is for arcs in our three-node network
+    B.append(['A','B']) # N: Arc from node 1 to 2
+    B.append(['B','C']) # N: Arc from node 2 to 3
     
-    # Set up information struction
+    # Set up information struction (dictionary)
     info={}
 
-    # Set up conditional distribution structure
+    # Set up conditional distribution structure (dictionary)
     M={};
 
     # Specify any given information for each event (a vector of 1s means there is no information given for that event.
     # If information is given for an event, place a 0 corresponding to any outcome that is impossible.
-    info[1]=np.array([1,1])
-    info[2]=np.array([1,1])
-    info[3]=np.array([1,1])
+    # N: info dictionary is a bunch of arrays
+    # N: [1,1] means no information (that node is not an evidence node)
+    # N: [1,0] or [0,1] means we HAVE information (this is an evidence node)
+    info['A']=np.array([0,1])
+    info['B']=np.array([1,1])
+    info['C']=np.array([1,0])
+    info['C']=np.array([1,0])
 
-    # Specify conditional distributions
-    M[1]=np.array([0.2,0.8])
-    M[2]=np.array([[0.8,0.2],[0.3,0.7]])
-    M[3]=np.array([[0.6,0.4],[0.2,0.8]])
+    # Specify prior and conditional distributions
+    M['A']=np.array([0.2,0.8]) # N: Prior distribution
+    M['B']=np.array([[0.8,0.2],[0.3,0.7]]) # N: Specified conditionals in terms of ROWS of matrices
+    M['C']=np.array([[0.6,0.4],[0.2,0.8]])
 
     #Specify the root node and a list of leaf nodes
-    root_node=1
-    leaf_nodes=[3]
+    root_node='A' # N: might be string
+    leaf_nodes=['C'] # N: List of leaf nodes: Node 3 is the ONLY leaf node in this network
 
 ######################### USER INPUT ENDS HERE ############################
 
