@@ -13,8 +13,8 @@ def main():
 
     # This example is for arcs in our three-node network
     B.append(['G','O'])
-    B.append(['O','S'])
-    B.append(['G','T'])
+    B.append(['O','T'])
+    B.append(['G','S'])
     
     # Set up information struction (dictionary)
     info={}
