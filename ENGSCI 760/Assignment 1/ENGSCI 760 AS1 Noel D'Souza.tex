@@ -201,7 +201,7 @@ Events A, B and C \textbf{are not} mutually independent. This is because if we k
 	& = 0.4 + (0.2)(0.4) + (0.2)(0.2)(0.4) + (0.2)(0.2)^2(0.4) + ... \\
 	& = 0.4 + (0.2)(0.4)\sum_{k=0}^{\infty}{(0.2)^k}\\
 	& = 0.4 + \frac{0.08}{0.8}\\
-	& = 0.5
+	\text{Pr}(X_t = \text{G})& = 0.5
 \end{align*}
 
 \begin{align*}
@@ -209,7 +209,7 @@ Events A, B and C \textbf{are not} mutually independent. This is because if we k
 	& = 0.3 + (0.2)(0.3) + (0.2)(0.2)(0.3) + (0.2)(0.2)^2(0.3) + ... \\
 	& = 0.3 + (0.2)(0.3)\sum_{k=0}^{\infty}{(0.2)^k}\\
 	& = 0.3 + \frac{0.06}{0.8}\\
-	& = 0.375
+	\text{Pr}(X_t = \text{A})& = 0.375
 \end{align*}
 
 \begin{align*}
@@ -217,15 +217,32 @@ Events A, B and C \textbf{are not} mutually independent. This is because if we k
 	& = 0.1 + (0.2)(0.1) + (0.2)(0.2)(0.1) + (0.2)(0.2)^2(0.1) + ... \\
 	& = 0.1 + (0.2)(0.1)\sum_{k=0}^{\infty}{(0.2)^k}\\
 	& = 0.1 + \frac{0.02}{0.8}\\
-	& = 0.125
+	\text{Pr}(X_t = \text{S})& = 0.125
 \end{align*}
 
 \subsection{Expected Profit From Unfinished Item}
 
 \begin{align*}
-\text{Expected profit} & = (50\times0.5) + (40\times0.375) - (10\times\sum_{k=0}^{\infty}{(0.175)^k}) - 20\\
-& = 25 + 15 - \frac{10}{1-0.175} - 20\\
-& = \$7.88
+\text{Note that:}\\
+m_{ij} & = \sum_{k=1}^{n} p_{ik}(m_{kj}+1) \text{,\qquad \qquad} i \neq j\\
+& = 1 + \sum_{k=1}^{n} p_{ik}m_{kj} \text{,\qquad \qquad} i \neq j\\
+& \\
+m_{\text{UG}} &= 1 + p_{\text{UU}}m_{\text{UG}} + p_{\text{UG}}m_{\text{GG}} + p_{\text{UA}}m_{\text{AG}} + p_{\text{UP}}m_{\text{PG}} + p_{\text{US}}m_{\text{SG}}\\
+&= 1 + (0)m_{\text{UG}} + (0.4)m_{\text{GG}} + (0.3)m_{\text{AG}} + (0.2)m_{\text{PG}} + (0.1)m_{\text{SG}}\\
+& = 1 + 0 + (0.4)(0) + (0.3)(0) + 0.2m_{\text{PG}} + (0.1)(0)\\
+& = 1 + 0.2m_{\text{PG}}\\
+& \\
+\text{Similarly:}\\
+m_{\text{UA}} &= 1 + 0.2m_{\text{PG}}\\
+m_{\text{US}} &= 1 + 0.2m_{\text{PG}}\\
+& \\
+\text{Therefore:}\\
+m_{\text{UG}} &= m_{\text{UA}} = m_{\text{US}} = 1.25\\
+& \\
+\text{Hence:}\\
+\text{Expected profit} & = (50\times0.5) + (40\times0.375) - (10\times1.25) - 20\\
+& = 25 + 15 - 12.5 - 20\\
+& = \$7.5
 \end{align*}
 
 \subsection{Updated One-Step Transition Matrix}
