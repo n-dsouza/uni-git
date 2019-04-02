@@ -167,11 +167,21 @@
 
 \subsection{Pairwise Independence?}
 
-Events A, B and C \textbf{are} pairwise independent. This is because Event A is independent of B and is also independent of C. Events B and C are also independent of each other. This means the outcomes in any \textbf{pair of events} are independent of each other
+Events A, B and C \textbf{are} pairwise independent since the outcomes in any \textbf{pair of events} are independent of each other.
+\begin{align*}
+P(A\cap B) &= P(A)P(B) = \frac{1}{36}\\
+P(B\cap C) &= P(B)P(C) = \frac{1}{36}\\
+P(A\cap C) &= P(A)P(C) = \frac{1}{36}\\
+\end{align*}
 
 \subsection{Mutual indepentence?}
 
-Events A, B and C \textbf{are not} mutually independent. This is because if we know the outcome of Event B and Event C, then we know with 100\% certainty the outcome of Event A. In other words, Event A is \textbf{dependent} on the intersection of Events B and C.
+Events A, B and C \textbf{are not} mutually independent. If we know the outcome of Events B and C, then we know, with 100\% certainty, the outcome of Event A. In other words, Event A is \textbf{dependent} on the intersection of Events B and C.
+\begin{align*}
+	P(A|\{B\cap C\}) &= 1\\
+	\text{Hence } P(A\cap B\cap C) &\neq P(A)P(B)P(C)
+\end{align*}
+
 
 \section{Markov Chains}
 
@@ -192,7 +202,7 @@ Events A, B and C \textbf{are not} mutually independent. This is because if we k
 	\end{blockarray}
 \end{equation*}
 
-\subsection{Limiting Distribution}
+\subsection{Limiting Distributions}
 	
 \begin{align*}
 	\text{Proportion of good items} & = \text{Probability that a given item is good} \\
@@ -209,23 +219,23 @@ Events A, B and C \textbf{are not} mutually independent. This is because if we k
 	& = 0.3 + (0.2)(0.3) + (0.2)(0.2)(0.3) + (0.2)(0.2)^2(0.3) + ... \\
 	& = 0.3 + (0.2)(0.3)\sum_{k=0}^{\infty}{(0.2)^k}\\
 	& = 0.3 + \frac{0.06}{0.8}\\
-	\text{Pr}(X_t = \text{A})& = 0.375
-\end{align*}
-
-\begin{align*}
+	\text{Pr}(X_t = \text{A})& = 0.375\\
+&\\
 	\text{Proportion of scrapped items} & = \text{Pr(scrap in step 1) + Pr(scrap in step 2) + ...}\\
 	& = 0.1 + (0.2)(0.1) + (0.2)(0.2)(0.1) + (0.2)(0.2)^2(0.1) + ... \\
 	& = 0.1 + (0.2)(0.1)\sum_{k=0}^{\infty}{(0.2)^k}\\
 	& = 0.1 + \frac{0.02}{0.8}\\
-	\text{Pr}(X_t = \text{S})& = 0.125
+	\text{Pr}(X_t = \text{S})& = 0.125\\
+	& \\
+	\text{Pr}(X_t = \text{U}) &= \text{Pr}(X_t = \text{P}) = 0
 \end{align*}
-
+\newline
 \subsection{Expected Profit From Unfinished Item}
 
 \begin{align*}
 \text{Note that:}\\
-m_{ij} & = \sum_{k=1}^{n} p_{ik}(m_{kj}+1) \text{,\qquad \qquad} i \neq j\\
-& = 1 + \sum_{k=1}^{n} p_{ik}m_{kj} \text{,\qquad \qquad} i \neq j\\
+m_{ij} & = \sum_{k=1}^{n} p_{ik}(m_{kj}+1) \text{, where } i \neq j\\
+& = 1 + \sum_{k=1}^{n} p_{ik}m_{kj} \text{, where } i \neq j\\
 & \\
 m_{\text{UG}} &= 1 + p_{\text{UU}}m_{\text{UG}} + p_{\text{UG}}m_{\text{GG}} + p_{\text{UA}}m_{\text{AG}} + p_{\text{UP}}m_{\text{PG}} + p_{\text{US}}m_{\text{SG}}\\
 &= 1 + (0)m_{\text{UG}} + (0.4)m_{\text{GG}} + (0.3)m_{\text{AG}} + (0.2)m_{\text{PG}} + (0.1)m_{\text{SG}}\\
@@ -233,42 +243,76 @@ m_{\text{UG}} &= 1 + p_{\text{UU}}m_{\text{UG}} + p_{\text{UG}}m_{\text{GG}} + p
 & = 1 + 0.2m_{\text{PG}}\\
 & \\
 \text{Similarly:}\\
-m_{\text{UA}} &= 1 + 0.2m_{\text{PG}}\\
-m_{\text{US}} &= 1 + 0.2m_{\text{PG}}\\
+m_{\text{UA}} &= 1 + 0.2m_{\text{PA}}\\
+m_{\text{US}} &= 1 + 0.2m_{\text{PS}}\\
 & \\
-\text{Therefore:}\\
+\end{align*}
+Note that $m_{\text{U}i}$ $=$ $m_{\text{P}i}$ as per the transition probabilities hence we can rearrange the above:
+\begin{align*}
+m_{\text{UG}} &= 1 + 0.2m_{\text{UG}}\\
+m_{\text{UA}} &= 1 + 0.2m_{\text{UA}}\\
+m_{\text{US}} &= 1 + 0.2m_{\text{US}}\\
+& \\
+\text{Therefore all paths have the same mean hitting time:}\\
 m_{\text{UG}} &= m_{\text{UA}} = m_{\text{US}} = 1.25\\
 & \\
-\text{Hence:}\\
 \text{Expected profit} & = (50\times0.5) + (40\times0.375) - (10\times1.25) - 20\\
-& = 25 + 15 - 12.5 - 20\\
-& = \$7.5
+& = \$7.50
 \end{align*}
 
 \subsection{Updated One-Step Transition Matrix}
 \begin{equation*}
 	\mathbf{P_{new}}=
-	\begin{blockarray}{*{7}{c} l}
-	  \begin{block}{*{7}{>{$\footnotesize}c<{$}} l}
-		U & G & A & S & $P_1$ & $P_2$ & $P_3$ & \\
+	\begin{blockarray}{*{6}{c} l}
+	  \begin{block}{*{6}{>{$\footnotesize}c<{$}} l}
+		U & G & A & S & $P_1$ & $P_2$ & \\
 	  \end{block}
-	  \begin{block}{[*{7}{c}]>{$\footnotesize}l<{$}}
-		0 & 0.4 & 0.3 & 0.1& 0.2 & 0 & 0\bigstrut[t]& U \\
-		0 & 1 & 0 & 0 & 0 & 0 & 0 & G \\
-		0 & 0 & 1 & 0 & 0 & 0 & 0 & A \\
-		0 & 0 & 0 & 1 & 0 & 0 & 0 & S \\
-		0 & 0.4 & 0.3 & 0.1 & 0 & 0.2 & 0 & $P_1$ \\
-		0 & 0.4 & 0.3 & 0.1 & 0 & 0 & 0.2 & $P_2$ \\
-		0 & 0 & 0 & 0 & 0 & 0 & 1 & $P_3$ \\
+	  \begin{block}{[*{6}{c}]>{$\footnotesize}l<{$}}
+		0 & 0.4 & 0.3 & 0.1& 0.2 & 0\bigstrut[t]& U \\
+		0 & 1 & 0 & 0 & 0 & 0 & G \\
+		0 & 0 & 1 & 0 & 0 & 0 & A \\
+		0 & 0 & 0 & 1 & 0 & 0 & S \\
+		0 & 0.4 & 0.3 & 0.1 & 0 & 0.2 & $P_1$ \\
+		0 & 0.4 & 0.3 & 0.3 & 0 & 0 & $P_2$ \\
 	  \end{block}
 	\end{blockarray}
 \end{equation*}
 
 \section{Hidden Markov Model}
 
-\subsection{createTransitions}
-\subsection{createEmissions}
-\subsection{HMM}
-\subsection{main}
+Note: Code is attached as an appendix\newline
+
+\textbf{The Intended Message:}\newline
+could you order a peri peri chicken sandwich for me and fries for alice\newline
+we want you to go to the closest restaurant\newline
+are you driving there in your car\newline
+where are you\newline
+how far are you from here\newline
+we are starving\newline
+what time will you show up here\newline
+
+\section{Decision Analysis}
+\subsection{Beysian Network}
+\includepdf[pages=-]{Beysian-network}
+
+\subsection{Decision Tree}
+\includegraphics[scale=0.8]{Decision-tree.jpg}
+Probabilities rounded to 3dp
+% \includepdf[pages=-]{decision-tree}
+\subsection{Decisions decisions...}
+Assuming Anadarko is risk-neutral, the optimal strategy is to drill the final well immediately---with an expected profit of \$700K. This is greater than that from seismic testing and drilling test drills (\$696K), or abandoning the site (\$0).
+
+Assuming Anadarko is very risk-averse, the optimal strategy would be to conduct seismic testing (and potentially drill test wells later). This hasan expected profit that is only \$4,000 lower than drilling the final well immediately. Even though the expected profit is lower, Anadarko can minimise potential losses by retaining the option of abandoning the site at any point before drilling the final well.
+
+\newpage
+
+\section{Appendix}
+\subsection{HMMfinal.py}
+\lstinputlisting[language=Python]{HMMfinal.py}
+\newpage
+\subsection{beliefprop.py}
+\lstinputlisting[language=Python]{beliefprop.py}
+
+
 
 \end{document}
