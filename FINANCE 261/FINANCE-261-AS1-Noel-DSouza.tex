@@ -247,8 +247,101 @@ A 1\% increase in the price of \textbf{Stock C} will have the greatest impact on
 \end{align*}
 
 \section{}
-\subsection{}
+\subsection{Monthly Returns}
+\subsubsection{End of March to End of April}
+\begin{align*}
+	\text{Adjusted (cum-)price} &= \frac{11}{10}\times\text{ex-price}\\
+	&= \frac{11}{10}\times5 = \$5.5\\
+	&\\
+	\text{Return} &= \frac{5.5}{4.5}-1 = 22.2\%
+\end{align*}
+
+\subsubsection{End of April to End of May}
+\begin{align*}
+	\text{Adjusted (cum-)price} &= 4 + 0.1 = \$4.10\\
+	&\\
+	\text{Return} &= \frac{4.10}{5}-1 = -18\%
+\end{align*}
+
+\subsubsection{End of May to End of June}
+\begin{align*}
+	\text{Value of a right per share} &= \frac{P_{\text{ex-right}}-S}{N}\\
+	&= \frac{4.6-3}{5} = \$0.32\\
+	\text{Adjusted (cum-)price} &= 4.6 + 0.32 = \$4.92\\
+	&\\
+	\text{Return} &= \frac{4.92}{4}-1 = 23\%
+\end{align*}
+
+\subsection{Monthly geometric mean return (March-end till June-end)}
+\begin{align*}
+	r_G &= \big[(1+\text{HPR}_1)\times(1+\text{HPR}_2)\times...\times(1+\text{HPR}_n)\big]^{\frac{1}{n}} - 1\\
+	&= \big[(1+0.2222)\times(1-0.18)\times(1+0.23)\big]^{\frac{1}{3}}-1\\
+	&= 0.07223 = 7.22\%
+\end{align*}
+
 \section{}
+\subsection{Computations}
+\subsubsection{Standard Deviations of Company A and B}
+\begin{align*}
+	E\big[r_A\big] &= 0.05(-0.2) + 0.25(0) + 0.35(0.1) + 0.2(0.15) + 0.15(0.3) = 0.1 \text{ or } 10\%\\
+	E\big[r_B\big] &= 0.05(-0.4) + 0.25(0.1) + 0.35(0) + 0.2(0.25) + 0.15(0.3) = 0.1 \text{ or } 10\%\\
+	&\\
+	Var\big[A\big] &= 0.05(-0.2-0.1)^2 + 0.25(0-0.1)^2 + 0.35(0.1-0.1)^2\\
+	&\text{\qquad} + 0.2(0.15-0.1)^2 + 0.15(0.3-0.1)^2 = 0.0135 \text{ or } 135\%^2\\
+	SD\big[A\big] &= \sqrt{Var\big[A\big]} = \sqrt{0.0135} = 0.1162 \text{ or } 11.62\%\\
+	&\\
+	Var\big[B\big] &= 0.05(-0.4-0.1)^2 + 0.25(0.1-0.1)^2 + 0.35(0-0.1)^2\\ 
+	&\text{\qquad} + 0.2(0.25-0.1)^2 + 0.15(0.3-0.1)^2 = 0.0265 \text{ or } 265\%^2\\
+	SD\big[B\big] &= \sqrt{Var\big[B\big]} = \sqrt{0.0265} = 0.1628 \text{ or } 16.28\%\\
+	% E\big[r_A\big] &= 0.05() + 0.25() + 0.35() + 0.2() + 0.15()
+\end{align*}
+
+\subsubsection{Covariance of returns between Company A and B}
+\begin{align*}
+	\sigma_{AB} = \textit{Cov}(A,B) &= \sum^{m}_{i=1}\bigg(r_{Ai}-E\big[r_A\big]\bigg)\bigg(r_{Bi}-E\big[r_B\big]\bigg)p_i\\
+	&=0.05(-0.2-0.1)(-0.4-0.1)\\
+	&\text{\qquad}+0.25(0-0.1)(0.1-0.1)\\
+	&\text{\qquad}+0.35(0.1-0.1)(0-0.1)\\
+	&\text{\qquad}+0.2(0.15-0.1)(0.25-0.1)\\
+	&\text{\qquad}+0.15(0.3-0.1)(0.3-0.1)\\
+	&= 0.015 \text{ or } 150\%^2
+\end{align*}
+
+\subsubsection{Correlation between Company A and B}
+\begin{align*}
+	\rho_{AB} = \textit{Corr}(A,B) &= \frac{\sigma_{AB}}{\sigma_A\sigma_B}\\
+	& = \frac{0.015}{0.1162\times0.1628} = 0.7931
+\end{align*}
+
+\subsection{}
+The correlation coefficient bewteen the stocks of Company A and Company B is 0.793. This strongly positive correlation means that the returns of the two stocks will largely move in the same direction. Building a portfolio consisting only of A and B will provide some diversification benefit and mitigate risk (since they are not perfectly correlated), thus it is advised to invest in both stocks instead of solely investing in one.
+
+However, since the correlation coefficient of A and B is already quite high, the most advisable option would be to build a portfolio with more stocks than just A and B.
+\subsection{}
+\begin{align*}
+	Var\big[r_p\big] &= w_A^2Var(r_A) + w_B^2Var(r_B) + 2w_Aw_B\textit{Cov}(r_A,r_B)\\
+	&\\
+	\text{But note that } w_B = 1-w_A& \text{ Hence:}\\
+	Var\big[r_p\big] &= w_A^2Var(r_A) + (1-w_A)^2Var(r_B) + 2w_A(1-w_A)\textit{Cov}(r_A,r_B)\\
+	&= w_A^2(0.0135) + (1-w_A)^2(0.0265) + 2w_A(1-w_A)(0.015)\\
+	&= 0.01w_A^2 - 0.023w_A + 0.0265\\
+	&\\
+	\text{Differentiate and solve for }&\text{$w_A$:}\\
+	0.02w_A - 0.023 &= 0\\
+	w_A &= 1.15\\
+	w_B &= 1-1.0375 = -0.15 \\
+	&\\
+	\text{Alternatively find $w_A$ and }&\text{$w_B$ as such:}\\
+	w_a &= \frac{\sigma_B^2-\rho_{AB}\sigma_A\sigma_B}{\sigma_A^2+\sigma_B^2-2\rho_{AB}\sigma_A\sigma_B}\\
+	&= \frac{0.0265-(0.7931)(0.1162)(0.1628)}{0.135+0.0265-2(0.7931)(0.1162)(0.1628)}\\
+	&= 1.15\\
+	w_B &= 1 - w_A = -0.15\\
+	&\\
+	\text{Hence minimum variance }&\text{is:}\\
+	Var\big[r_p\big] &= (1.15)^2(0.0135) + (-0.15)^2(0.0265) + 2(1.15)(-0.15)(0.015)\\
+	&= 0.013275 \text{ or } 132.75\%^2
+\end{align*}
+
 \section{}
 \section{}
 
