@@ -1,0 +1,257 @@
+\documentclass[12pt]{article}
+
+\usepackage[utf8]{inputenc} % Required for inputting international characters
+\usepackage[T1]{fontenc} % Output font encoding for international characters
+\usepackage{mathpazo} % Palatino font
+
+
+%%% PAGE DIMENSIONS
+\usepackage[margin=2.54cm]{geometry} % 1.27 is narrower!
+\geometry{a4paper} 
+
+%%% Font set to times new roman
+\usepackage{times}
+%%% Really good graphics package
+\usepackage{graphicx}
+
+% Insert {PDFS}
+\usepackage{pdfpages}
+
+% Change section spacing, remove the spacing
+\usepackage[compact]{titlesec}
+\titlespacing*{\section}{0pt}{*0}{*0}
+\titlespacing*{\subsection}{0pt}{*0}{*0}
+\titlespacing*{\subsubsection}{0pt}{*0}{*0}
+
+%%% Better floats
+\usepackage{float}
+
+
+\usepackage{tikz}
+\usepackage{wrapfig}
+
+%%% PACKAGES
+\usepackage{booktabs} % for much better looking tables
+\usepackage{amsmath} % for better maths
+\usepackage{paralist} % very flexible & customisable lists (eg. enumerate/itemize, etc.)
+\usepackage{verbatim} % adds environment for commenting out blocks of text & for better verbatim
+\usepackage{subfig} % make it possible to include more than one captioned figure/table in a single float
+\usepackage{mathtools} % matrices
+\usepackage{blkarray, bigstrut} % matrices
+
+\usepackage[framed,numbered]{matlab-prettifier} % enable inserting matlab code.
+\usepackage[parfill]{parskip}
+%\addtolength{\jot}{1em}
+\usepackage{amssymb}
+\usepackage{cancel}
+\usepackage{color}
+\usepackage{listings}
+\usepackage{pdflscape} % Enabling rotating pages into a landscape orientation.
+
+
+%%% HEADERS & FOOTERS
+\usepackage{fancyhdr} % This should be set AFTER setting up the page geometry
+\pagestyle{fancy} % options: empty , plain , fancy
+\renewcommand{\headrulewidth}{0pt} % customise the layout...
+\lhead{}\chead{}\rhead{}
+\lfoot{}\cfoot{\thepage}\rfoot{}
+
+%%% SECTION TITLE APPEARANCE
+\usepackage{sectsty}
+\renewcommand{\thesubsection}{\thesection.\alph{subsection}}
+
+%%% ToC (table of contents) APPEARANCE
+\usepackage[nottoc,notlof,notlot]{tocbibind} % Put the bibliography in the ToC
+\usepackage[titles,subfigure]{tocloft} % Alter the style of the Table of Contents
+\renewcommand{\cftsecfont}{\rmfamily\mdseries\upshape}
+\renewcommand{\cftsecpagefont}{\rmfamily\mdseries\upshape} % No bold!
+
+%%% Hyperlinking 
+\usepackage{hyperref}
+\begin{document}
+
+\begin{titlepage} % Suppresses displaying the page number on the title page and the subsequent page counts as page 1
+	\newcommand{\HRule}{\rule{\linewidth}{0.5mm}} % Defines a new command for horizontal lines, change thickness here
+	\center % Centre everything on the page
+	
+	%------------------------------------------------
+	%	Headings
+    %------------------------------------------------
+    
+	\textsc{\LARGE 2019}\\[1.5cm] % Main heading such as the name of your university/college
+	\textsc{\Large Semester 1}\\[0.5cm] % Major heading such as course name
+	% \textsc{\large Department of Engineering Science}\\[0.5cm] % Minor heading such as course title
+	
+	%------------------------------------------------
+	%	Title
+	%------------------------------------------------
+	
+	\HRule\\[0.4cm]
+	{\huge\bfseries FINANCE 261 --- Assignment 1}\\[0.4cm] % Title of your document
+	\HRule\\[1cm]
+	
+	%------------------------------------------------
+	%	Author(s)
+	%------------------------------------------------
+	
+    \begin{minipage}[t]{0.4\textwidth}
+        \vspace{0pt}
+		\begin{center}
+			\large
+			Noel \textsc{D'Souza}\\ % Your name
+			\textit{ndso092}\\
+			\textit{449609993}
+		\end{center}
+	\end{minipage}
+	~
+    % \begin{minipage}[t]{0.4\textwidth}
+    %     \vspace{0pt}\raggedright
+	% 	\begin{flushright}
+	% 		\large
+	% 		\textit{Employer Details}\\
+    %         PwC \textsc{New Zealand} % Supervisor's name
+    %         \linebreak \linebreak
+    %         PwC Tower\\
+    %         Level 22, 188 Quay St\\
+    %         Auckland, 1010
+	% 	\end{flushright}
+	% \end{minipage}
+
+	% If you don't want a supervisor, uncomment the two lines below and comment the code above
+	%{\large\textit{Author}}\\
+	%John \textsc{Smith} % Your name
+	
+	%------------------------------------------------
+	%	Date
+	%------------------------------------------------
+	
+	\vfill\vfill\vfill % Position the date 3/4 down the remaining page
+	
+    {\large\today} % Date, change the \today to a set date if you want to be precise
+    % {\large 7 August, 2019}
+	
+	%------------------------------------------------
+	%	Logo
+	%------------------------------------------------
+	
+    % \vfill
+    
+    % \begin{minipage}[t]{0.4\textwidth}
+    %     \vspace{0pt}
+    %     \begin{flushleft}
+    %     \includegraphics[width=0.9\textwidth]{engtitle.png}\\[1cm]
+	% 	\end{flushleft}
+	% \end{minipage}
+	% ~
+    % \begin{minipage}[t]{0.4\textwidth}
+    %     \vspace{0pt}\raggedright
+	% 	\begin{flushright}
+    %         \includegraphics[width=0.45\textwidth]{pwc.png}\\[1cm]        
+	% 	\end{flushright}
+	% \end{minipage}
+
+
+    % \includegraphics[width=0.4\textwidth]{engtitle.png}\\[1cm] % Include a department/university logo - this will require the graphicx package
+	 
+	%----------------------------------------------------------------------------------------
+	
+	\vfill % Push the date up 1/4 of the remaining page
+	
+\end{titlepage}
+
+%------------------------------------------------
+%   Summary
+%------------------------------------------------
+
+\section{}
+\subsection{}
+A 1\% increase in the price of \textbf{Stock C} will have the greatest impact on the value of the index. This is because a Price Weighted Index is comprised of one share of each stock. Hence a 1\% increase in the price of the stock with the \textbf{largest share price} (i.e. Stock C) will contribute the most towards the index value.
+
+\subsection{Divisor at t=0}
+\begin{align*}
+	\frac{P_0(A) + P_0(B) + P_0(C)}{D} &= I_0\\
+	\frac{40+50+100}{D} &= 100\\
+	D &= \frac{190}{100} \\
+	D &= 1.9\\
+\end{align*}
+
+\subsection{Price weighted index value at t=1, and monthly \newline percentage return}
+\begin{align*}
+	\frac{P_1(A) + P_1(B) + P_1(C)}{D} &= I_1\\
+	\frac{44+54+100}{1.9} &= I_1\\
+	I_1 &= \frac{208}{1.9} \\
+	I_1 &= 109.47 \text{ index value after 1 month}\\
+	&\\
+	\text{Monthly Return} &= \frac{109.47-100}{100}\\
+	&= 9.47\%
+\end{align*}
+
+\subsection{Divisior after 2-for-1 stock split for stock C}
+\begin{align*}
+	\frac{P_1(A) + P_1(B) + P_1^{\text{(\textit{split})}}(C)}{D^{(\textit{split})}} &= I_1\\
+	\frac{44+54+55}{D^{(\textit{split})}} &= 109.47\\
+	D^{(\textit{split})} &= \frac{153}{109.47} \\
+	D^{(\textit{split})} &= 1.40\\
+\end{align*}
+
+\section{}
+\subsection{Initial investment and borrowing}
+\begin{align*}
+	\text{Position Value} &= 1000 \text{ shares} \times \$25 \text{ per share}\\
+	&= \$25,000\\
+	&\\
+	\text{Initial Investor Equity} &= \text{Position Value} \times \text{IMR}\\
+	&= \$25,000 \times 0.5\\
+	&= \$12,500\\
+	&\\
+	\text{Amount Borrowed} &= \text{Position Value} \times (1-\text{IMR})\\
+	&= \$25,000 \times (1-0.5)\\
+	&= \$12,500\\
+\end{align*}
+
+\subsection{Margin call trigger price}
+\begin{align*}
+	\text{Maintenance Margin} &=  \frac{\text{Total Position Value} - \text{Borrowing}}{\text{Total Position Value}} \\
+	0.4 &= \frac{1,000p - 12,500}{1,000p}\\
+	400p &= 1,000p-12,500\\
+	p &= \frac{12,500}{600}\\
+	p &= \$20.83 \text{ per share is the margin call trigger price} 
+\end{align*}
+
+\subsection{Pledging T-bills}
+\begin{align*}
+	\text{Maintenance Margin} &=  \frac{\text{Total Value} - \text{Borrowing} + \text{Additional Contribution of T-bills}}{\text{Total Value}+ \text{Additional Contribution of T-bills}} \\
+	0.4 &= \frac{(1,000\times20) - 12,500 + x}{(1,000\times20)+x} \\
+	8,000 + 0.4x &= 7,500 + x\\
+	0.6x &= 500\\
+	x &= \$833.33 \text{ worth of T-bills must be added}\\
+\end{align*}
+
+\subsection{Extent of partial liquidation}
+\begin{align*}
+	\text{Maintenance Margin} &=  \frac{\text{Total Value} - \text{Borrowing}}{\text{Total Value} - \text{Value of Liquidated Shares}} \\
+	0.4 &= \frac{(1,000\times20) - 12,500}{(1,000\times20)-x} \\
+	8,000 - 0.4x &= 7,500\\
+	0.4x &= 500\\
+	x &= \$1,250 \text{ is the value of shares sold off}\\
+\end{align*}
+
+\begin{flushleft}
+	\text{Given the share price of \$20 per share:}
+\end{flushleft}
+
+\begin{align*}
+	\text{Number of shares sold off by broker} &= \frac{\$1,250}{\$20}\\
+	&= 62.5\\
+	\text{Broker will sell} &\text{ off 63 shares to get the margin back up to 40\%}
+\end{align*}
+
+\section{}
+\subsection{}
+\section{}
+\section{}
+\section{}
+
+
+
+\end{document}
