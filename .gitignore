@@ -21,6 +21,7 @@
 *.fls
 *.log
 *.lol
+*.lot
 *.out
 *.gz
 *.lof
