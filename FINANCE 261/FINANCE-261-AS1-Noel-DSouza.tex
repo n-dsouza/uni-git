@@ -330,7 +330,8 @@ However, since the correlation coefficient of A and B is already quite high, the
 	0.02w_A - 0.023 &= 0\\
 	w_A &= 1.15\\
 	w_B &= 1-1.0375 = -0.15 \\
-	&\\
+\end{align*}
+\begin{align*}
 	\text{Alternatively find $w_A$ and }&\text{$w_B$ as such:}\\
 	w_a &= \frac{\sigma_B^2-\rho_{AB}\sigma_A\sigma_B}{\sigma_A^2+\sigma_B^2-2\rho_{AB}\sigma_A\sigma_B}\\
 	&= \frac{0.0265-(0.7931)(0.1162)(0.1628)}{0.135+0.0265-2(0.7931)(0.1162)(0.1628)}\\
@@ -343,8 +344,76 @@ However, since the correlation coefficient of A and B is already quite high, the
 \end{align*}
 
 \section{}
+\subsection{A better portfolio}
+The client's current portfolio sees him invested 100\% in Stock 1. His current portfolio's characteristics are defined below:
+\begin{align*}
+	E\big[R_p^{\text{(status quo)}}\big] &= 0.1 \text{ or } 10\%\\
+	\sigma = SD\big[R_p^{\text{(status quo)}}\big] &= 0.1 \text{ or } 10\%\\
+	\text{Hence: \qquad}\sigma^2 = Var\big[R_p^{\text{(status quo)}}\big] &= 0.01 \text{ or } 100\%^2\\
+\end{align*}
+
+A new, "better" portfolio is defined as one which has any of the following characteristics:
+\begin{align*}
+	E\big[R_p^{\text{(new)}}\big] &> E\big[R_p^{\text{(status quo)}}\big]\\
+	\text{and:\quad}SD\big[R_p^{\text{(new)}}\big] &= SD\big[R_p^{\text{(status quo)}}\big]\\
+	&\text{OR}\\
+	E\big[R_p^{\text{(new)}}\big] &= E\big[R_p^{\text{(status quo)}}\big]\\
+	\text{and:\quad}SD\big[R_p^{\text{(new)}}\big] &< SD\big[R_p^{\text{(status quo)}}\big]\\
+	&\text{OR}\\
+	E\big[R_p^{\text{(new)}}\big] &> E\big[R_p^{\text{(status quo)}}\big]\\
+	\text{and:\quad}SD\big[R_p^{\text{(new)}}\big] &< SD\big[R_p^{\text{(status quo)}}\big]\\
+\end{align*}
+
+\newpage
+First, we find the optimal risky portfolio weight for Stock 1 (and Stock 2) to form CAL when Stocks 1 and 2 are risky:
+\begin{align*}
+	w_1 &= \frac{\big(E\big[r_1\big]-r_f\big)\sigma_2^2-\big(E\big[r_2\big]-r_f\big)\sigma_1\sigma_2\rho_{1,2}}{\big(E\big[r_1\big]-r_f\big)\sigma_2^2 + \big(E\big[r_2\big]-r_f\big)\sigma_1^2-\big(E\big[r_1\big]-r_f+E\big[r_2\big]-r_f\big)\sigma_1\sigma_2\rho_{1,2}}\\
+	&\\
+	&= \frac{(0.1-0.05)\cdot0.3^2-(0.2-0.05)\cdot0.1\cdot0.3\cdot0.5}{(0.1-0.05)\cdot0.3^2+(0.2-0.05)\cdot0.1^2-(0.1-0.05+0.2-0.05)\cdot0.1\cdot0.3\cdot0.5}\\
+	&= \frac{0.00225}{0.003} = 0.28125\\
+	&\text{\qquad\qquad\qquad\qquad\qquad} w_1 = 0.75 \text{\qquad\qquad} w_2 = 0.25\\
+\end{align*}
+The characteristics for this optimal risky portfolio (ORP) are as follows:
+\begin{align*}
+	E\big[R_{ORP}\big] &= (0.75\times0.1) + (0.25*0.2) = 0.125 \text{ or } 12.5\%\\
+	Var\big[R_{ORP}\big] &= (0.75^2\times0.1^2)+(0.25^2\times0.3^2) + (2\times0.75\times0.25\times0.5\times0.1\times0.3)\\
+	&= 0.016875 \text{ or } 168.75\%^2\\
+	SD\big[R_{ORP}\big] &= \sqrt{0.016875} = 0.1299 \text { or } 12.99\%\\
+\end{align*}
+
+Since this still doesn't meet our criteria for a "better" portfolio, we may choose to include the risk-free T-Bills by arbitrarily setting $w_f$ to 0.3. The new portfolio characteristics are as follows:
+\begin{align*}
+	&\text{\quad} w_f = 0.3 \text{\qquad\qquad} w_{ORP} = 0.7\\
+	&\\
+	E\big[R_{ORP}\big] &= (0.3\times0.05) + (0.7*0.125) = 0.1025 \text{ or }10.25\%\\
+	Var\big[R_{ORP}\big] &= w_{ORP}^2Var\big[R_{ORP}\big]) = 0.00826875 \text{ or } 82.69\%^2\\
+	SD\big[R_{ORP}\big] &= \sqrt{0.00826875} = 0.090932 \text { or } 9.09\%\\
+\end{align*}
+
+Overall, the weights are applied are as follows, leading to the new portfolio shown below:
+\begin{align*}
+	w_f &= 0.3 \text{\qquad\qquad} w_{ORP} = 0.7\\
+	\text{Hence: \quad} w_1 &= 0.7\times0.75 = 0.525\\
+	w_2 &= 0.7\times0.25 = 0.175\\
+	&\\
+	\text{Therefore, Amt in T-Bills} &= 0.3 \times \$10,000 = \$3,000\\
+	\text{Amt in Stock 1} &= 0.525 \times \$10,000 = \$5,250\\
+	\text{Amt in Stock 2} &= 0.175 \times \$10,000 = \$1,750\\
+\end{align*}
+
+The new portfolio shown above is better since it satisfies one of the criteria. It offers a higher expected return at 10.25\%, with a lower standard deviation of 9.1\%. This means the return is greater and the risk is lower for the customer than investing only in Stock 1.
+
+This new portfolio is one of many feasible solutions to our criteria listed above. There are more sophisticated methods of calculating the optimal portfolio(s) given these three securities and their characteristics. That optimal portfolio(s) may or may not include all three securities. Further, the customer's risk appetite should also be factored in when designing a portfolio.
+
+\subsection{Better Results Guaranteed?}
+This portfolio does not guarantee anything. It simple offers statistically better prospects of generating a higher expected return while taking on a lower level of risk when compared with his original portfolio. 
+
+On average this portfolio will perform comparatively better than his original portfolio (earning higher return and having a lower level of risk since this new portfolio diversifies away some of the idiosyncratic risk of holding only Stock 1). However, there is no guarantee of this actually happening---there is only an expectation that it will perform better. Actual returns may be higher or lower than the expected 10.25\%.
+
+If, for instance, either Stock 2 or T-Bills drop significantly due to unforeseen circumstances, then this new portfolio's result will be worse than that of being invested in Stock 1 only.
+
+My response: "No guarantees made on diversification. Simply better 'odds' of success (and lower chances of failure) than not being diversified."
+
 \section{}
-
-
 
 \end{document}
