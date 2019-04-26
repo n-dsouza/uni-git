@@ -4,6 +4,7 @@
 \usepackage[T1]{fontenc} % Output font encoding for international characters
 \usepackage{mathpazo} % Palatino font
 
+% \usepackage[hidelinks]{hyperref} % Hide Hyperlinks
 
 %%% PAGE DIMENSIONS
 \usepackage[margin=2.54cm]{geometry} % 1.27 is narrower!
@@ -168,8 +169,8 @@
 %------------------------------------------------
 
 \section{}
-\subsection{}
-A 1\% increase in the price of \textbf{Stock C} will have the greatest impact on the value of the index. This is because a Price Weighted Index is comprised of one share of each stock. Hence a 1\% increase in the price of the stock with the \textbf{largest share price} (i.e. Stock C) will contribute the most towards the index value.
+\subsection{A 1\% increase in price}
+A 1\% increase in the price of \textbf{Stock C} will have the greatest impact on the value of the index. This is because a Price Weighted Index is comprised of one share of each stock. Hence a 1\% increase in the price of the stock with the \textbf{largest share price} (i.e. Stock C) will contribute the most towards the index value (more than 1\% increase in the price of Stocks A or B).
 
 \subsection{Divisor at t=0}
 \begin{align*}
@@ -179,10 +180,10 @@ A 1\% increase in the price of \textbf{Stock C} will have the greatest impact on
 	D &= 1.9\\
 \end{align*}
 
-\subsection{Price weighted index value at t=1, and monthly \newline percentage return}
+\subsection{Price weighted index value at t=1, and monthly \newline percentage return for the period t=0 to t=1}
 \begin{align*}
 	\frac{P_1(A) + P_1(B) + P_1(C)}{D} &= I_1\\
-	\frac{44+54+100}{1.9} &= I_1\\
+	\frac{44+54+110}{1.9} &= I_1\\
 	I_1 &= \frac{208}{1.9} \\
 	I_1 &= 109.47 \text{ index value after 1 month}\\
 	&\\
@@ -190,12 +191,12 @@ A 1\% increase in the price of \textbf{Stock C} will have the greatest impact on
 	&= 9.47\%
 \end{align*}
 
-\subsection{Divisior after 2-for-1 stock split for stock C}
+\subsection{Divisior after 2-for-1 stock split for Stock C}
 \begin{align*}
 	\frac{P_1(A) + P_1(B) + P_1^{\text{(\textit{split})}}(C)}{D^{(\textit{split})}} &= I_1\\
 	\frac{44+54+55}{D^{(\textit{split})}} &= 109.47\\
 	D^{(\textit{split})} &= \frac{153}{109.47} \\
-	D^{(\textit{split})} &= 1.40\\
+	D^{(\textit{split})} &= 1.3976 \text{\quad(4 d.p.)}\\
 \end{align*}
 
 \section{}
@@ -206,11 +207,11 @@ A 1\% increase in the price of \textbf{Stock C} will have the greatest impact on
 	&\\
 	\text{Initial Investor Equity} &= \text{Position Value} \times \text{IMR}\\
 	&= \$25,000 \times 0.5\\
-	&= \$12,500\\
+	&= \$12,500 \text{  of your own money initially invested}\\
 	&\\
 	\text{Amount Borrowed} &= \text{Position Value} \times (1-\text{IMR})\\
 	&= \$25,000 \times (1-0.5)\\
-	&= \$12,500\\
+	&= \$12,500 \text{  borrowed from the broker}\\
 \end{align*}
 
 \subsection{Margin call trigger price}
@@ -219,7 +220,7 @@ A 1\% increase in the price of \textbf{Stock C} will have the greatest impact on
 	0.4 &= \frac{1,000p - 12,500}{1,000p}\\
 	400p &= 1,000p-12,500\\
 	p &= \frac{12,500}{600}\\
-	p &= \$20.83 \text{ per share is the margin call trigger price} 
+	p &= \$20.83 \text{  per share is the margin call trigger price (2 d.p.)} 
 \end{align*}
 
 \subsection{Pledging T-bills}
@@ -228,7 +229,7 @@ A 1\% increase in the price of \textbf{Stock C} will have the greatest impact on
 	0.4 &= \frac{(1,000\times20) - 12,500 + x}{(1,000\times20)+x} \\
 	8,000 + 0.4x &= 7,500 + x\\
 	0.6x &= 500\\
-	x &= \$833.33 \text{ worth of T-bills must be added}\\
+	x &= \$833.33 \text{ worth of T-bills must be added (2 d.p.)}\\
 \end{align*}
 
 \subsection{Extent of partial liquidation}
@@ -237,19 +238,17 @@ A 1\% increase in the price of \textbf{Stock C} will have the greatest impact on
 	0.4 &= \frac{(1,000\times20) - 12,500}{(1,000\times20)-x} \\
 	8,000 - 0.4x &= 7,500\\
 	0.4x &= 500\\
-	x &= \$1,250 \text{ is the value of shares sold off}\\
+	x &= \$1,250 \text{ is the value of shares sold off (2 d.p.)}
 \end{align*}
 
-\begin{flushleft}
-	\text{Given the share price of \$20 per share:}
-\end{flushleft}
-
+Given the share price of \$20 per share:
 \begin{align*}
 	\text{Number of shares sold off by broker} &= \frac{\$1,250}{\$20}\\
-	&= 62.5\\
-	\text{Broker will sell} &\text{ off 63 shares to get the margin back up to 40\%}
+	&= 62.5 = 63
 \end{align*}
+The broker will sell off 63 shares to get the margin back up to 40\% (rounded up since a fractional share cannot be sold).
 
+\newpage
 \section{}
 \subsection{Monthly Returns}
 \subsubsection{End of March to End of April}
@@ -257,7 +256,7 @@ A 1\% increase in the price of \textbf{Stock C} will have the greatest impact on
 	\text{Adjusted (cum-)price} &= \frac{11}{10}\times\text{ex-price}\\
 	&= \frac{11}{10}\times5 = \$5.5\\
 	&\\
-	\text{Return} &= \frac{5.5}{4.5}-1 = 22.2\%
+	\text{Return} &= \frac{5.5}{4.5}-1 = 22.22\% \text{  (2 d.p.)}
 \end{align*}
 
 \subsubsection{End of April to End of May}
@@ -297,7 +296,6 @@ A 1\% increase in the price of \textbf{Stock C} will have the greatest impact on
 	Var\big[B\big] &= 0.05(-0.4-0.1)^2 + 0.25(0.1-0.1)^2 + 0.35(0-0.1)^2\\ 
 	&\text{\qquad} + 0.2(0.25-0.1)^2 + 0.15(0.3-0.1)^2 = 0.0265 \text{ or } 265\%^2\\
 	SD\big[B\big] &= \sqrt{Var\big[B\big]} = \sqrt{0.0265} = 0.1628 \text{ or } 16.28\%\\
-	% E\big[r_A\big] &= 0.05() + 0.25() + 0.35() + 0.2() + 0.15()
 \end{align*}
 
 \subsubsection{Covariance of returns between Company A and B}
@@ -314,13 +312,18 @@ A 1\% increase in the price of \textbf{Stock C} will have the greatest impact on
 \subsubsection{Correlation between Company A and B}
 \begin{align*}
 	\rho_{AB} = \textit{Corr}(A,B) &= \frac{\sigma_{AB}}{\sigma_A\sigma_B}\\
-	& = \frac{0.015}{0.1162\times0.1628} = 0.7931
+	& = \frac{0.015}{0.1162\times0.1628} = 0.7931\\
+	&\\
+	\text{used unrounded figures} &\text{ for $\sigma_A$ and $\sigma_B$ in calculation}
 \end{align*}
 
 \subsection{}
-The correlation coefficient bewteen the stocks of Company A and Company B is 0.793. This strongly positive correlation means that the returns of the two stocks will largely move in the same direction. Building a portfolio consisting only of A and B will provide some diversification benefit and mitigate risk (since they are not perfectly correlated), thus it is advised to invest in both stocks instead of solely investing in one.
 
-However, since the correlation coefficient of A and B is already quite high, the most advisable option would be to build a portfolio with more stocks than just A and B.
+A correlation coefficient of 0.793 between the stocks of Company A and B signifies a strong positive correlation. This means the returns of the two stocks tend to move somewhat in the same direction.
+
+Building a portfolio with \textbf{both} Stocks A and B is \textbf{preferable} to building a portfolio with \textbf{any one} of them. This is because they are not perfectly correlated so there is some diversification benefit to be realised by investing in a portfolio of A and B instead of solely investing in one.
+
+However, since the correlation coefficient of A and B is already quite high, the \textbf{most advisable option would be to build a portfolio with more stocks than just A and B}. This is because even in a portfolio with both stocks, there exists a large amount of idiosyncratic risk. If the price of A falls, the stock of B is likely to exhibit similar behaviour and also fall. 
 \subsection{}
 \begin{align*}
 	Var\big[r_p\big] &= w_A^2Var(r_A) + w_B^2Var(r_B) + 2w_Aw_B\textit{Cov}(r_A,r_B)\\
@@ -332,8 +335,8 @@ However, since the correlation coefficient of A and B is already quite high, the
 	&\\
 	\text{Differentiate and solve for }&\text{$w_A$:}\\
 	0.02w_A - 0.023 &= 0\\
-	w_A &= 1.15\\
-	w_B &= 1-1.0375 = -0.15 \\
+	w_A &= 1.15 \text{  (2 d.p.)}\\
+	w_B &= 1-1.0375 = -0.15 \text{  (2 d.p.)}
 \end{align*}
 \begin{align*}
 	\text{Alternatively find $w_A$ and }&\text{$w_B$ as such:}\\
@@ -368,7 +371,6 @@ A new, "better" portfolio is defined as one which has any of the following chara
 	\text{and:\quad}SD\big[R_p^{\text{(new)}}\big] &< SD\big[R_p^{\text{(status quo)}}\big]\\
 \end{align*}
 
-\newpage
 First, we find the optimal risky portfolio weight for Stock 1 (and Stock 2) to form CAL when Stocks 1 and 2 are risky:
 \begin{align*}
 	w_1 &= \frac{\big(E\big[r_1\big]-r_f\big)\sigma_2^2-\big(E\big[r_2\big]-r_f\big)\sigma_1\sigma_2\rho_{1,2}}{\big(E\big[r_1\big]-r_f\big)\sigma_2^2 + \big(E\big[r_2\big]-r_f\big)\sigma_1^2-\big(E\big[r_1\big]-r_f+E\big[r_2\big]-r_f\big)\sigma_1\sigma_2\rho_{1,2}}\\
@@ -382,32 +384,32 @@ The characteristics for this optimal risky portfolio (ORP) are as follows:
 	E\big[R_{ORP}\big] &= (0.75\times0.1) + (0.25*0.2) = 0.125 \text{ or } 12.5\%\\
 	Var\big[R_{ORP}\big] &= (0.75^2\times0.1^2)+(0.25^2\times0.3^2) + (2\times0.75\times0.25\times0.5\times0.1\times0.3)\\
 	&= 0.016875 \text{ or } 168.75\%^2\\
-	SD\big[R_{ORP}\big] &= \sqrt{0.016875} = 0.1299 \text { or } 12.99\%\\
+	SD\big[R_{ORP}\big] &= \sqrt{0.016875} = 0.1299 \text { or } 12.99\%
 \end{align*}
 
-Since this still doesn't meet our criteria for a "better" portfolio, we may choose to include the risk-free T-Bills by arbitrarily setting $w_f$ to 0.3. The new portfolio characteristics are as follows:
+Since this still doesn't meet our criteria for a "better" portfolio, we now choose to include the risk-free T-Bills by arbitrarily setting $w_f$ to 0.3. This will reduce risk (standard deviation) due to the principle of diversification. The new portfolio characteristics are as follows:
 \begin{align*}
 	&\text{\quad} w_f = 0.3 \text{\qquad\qquad} w_{ORP} = 0.7\\
 	&\\
 	E\big[R_{ORP}\big] &= (0.3\times0.05) + (0.7*0.125) = 0.1025 \text{ or }10.25\%\\
-	Var\big[R_{ORP}\big] &= w_{ORP}^2Var\big[R_{ORP}\big]) = 0.00826875 \text{ or } 82.69\%^2\\
-	SD\big[R_{ORP}\big] &= \sqrt{0.00826875} = 0.090932 \text { or } 9.09\%\\
+	Var\big[R_{ORP}\big] &= w_{ORP}^2Var\big[R_{ORP}\big] = 0.00826875 \text{ or } 82.69\%^2\\
+	SD\big[R_{ORP}\big] &= \sqrt{0.00826875} = 0.090932 \text { or } 9.09\%
 \end{align*}
 
 Overall, the weights are applied are as follows, leading to the new portfolio shown below:
 \begin{align*}
-	w_f &= 0.3 \text{\qquad\qquad} w_{ORP} = 0.7\\
+	w_f &= 0.3 \text{\qquad\qquad} \big(w_{ORP} = 0.7\big)\\
 	\text{Hence: \quad} w_1 &= 0.7\times0.75 = 0.525\\
 	w_2 &= 0.7\times0.25 = 0.175\\
 	&\\
 	\text{Therefore, Amt in T-Bills} &= 0.3 \times \$10,000 = \$3,000\\
 	\text{Amt in Stock 1} &= 0.525 \times \$10,000 = \$5,250\\
-	\text{Amt in Stock 2} &= 0.175 \times \$10,000 = \$1,750\\
+	\text{Amt in Stock 2} &= 0.175 \times \$10,000 = \$1,750
 \end{align*}
 
 The new portfolio shown above is better since it satisfies one of the criteria. It offers a higher expected return at 10.25\%, with a lower standard deviation of 9.1\%. This means the return is greater and the risk is lower for the customer than investing only in Stock 1.
 
-This new portfolio is one of many feasible solutions to our criteria listed above. There are more sophisticated methods of calculating the optimal portfolio(s) given these three securities and their characteristics. That optimal portfolio(s) may or may not include all three securities. Further, the customer's risk appetite should also be factored in when designing a portfolio.
+This new portfolio is one of many feasible solutions to our criteria listed above. There are more sophisticated methods of calculating the \textbf{optimal} portfolio(s) given these three securities and their characteristics. That optimal portfolio(s) may or may not include all three securities. Further, the customer's risk appetite should also be factored in when designing a portfolio.
 
 \subsection{Better Results Guaranteed?}
 This portfolio does not guarantee anything. It simple offers statistically better prospects of generating a higher expected return while taking on a lower level of risk when compared with his original portfolio. 
@@ -466,6 +468,21 @@ My response: "No guarantees made on diversification. Simply better 'odds' of suc
 	\end{tabular}
 \end{table}
 
+\begin{table}[H]
+	\centering
+	\caption{5-yr Continuously Componunded HPR --- Formulae}
+	\begin{tabular}{ |c|c|c| }
+		\hline
+		\multicolumn{3}{|c|}{Sheet1}\\
+		\hline
+		AAPL & MSFT & IBM\\
+		\hline
+		\text{=LN(B397/B337)} & \text{=LN(D397/D337)} & \text{=LN(F397/F337)}\\
+		\hline
+	\end{tabular}
+\end{table}
+
+
 \subsection{Mean and standard deviation of monthly rates of return}
 \begin{table}[H]
 	\centering
@@ -482,6 +499,21 @@ My response: "No guarantees made on diversification. Simply better 'odds' of suc
 	\end{tabular}
 \end{table}
 
+\begin{table}[H]
+	\centering
+	\caption{Mean and SD of monthly rates of return --- Formulae}
+	\begin{tabular}{ |l||c|c|c| }
+		\hline
+		\multicolumn{4}{|c|}{Sheet1}\\
+		\hline
+		& AAPL & MSFT & IBM\\
+		\hline
+		Mean & \text{=AVERAGE(C3:C397)} & \text{=AVERAGE(E3:E397)} & \text{=AVERAGE(G3:G397)}\\
+		Std Dev & \text{=STDEV.S(C3:C397)} & \text{=STDEV.S(E3:E397)} & \text{=STDEV.S(G3:G397)}\\
+		\hline
+	\end{tabular}
+\end{table}
+
 \subsection{Mean and standard deviation of returns on a portfolio equally-weighted on AAPL, MSFT and IBM}
 \begin{table}[H]
 	\centering
@@ -494,6 +526,21 @@ My response: "No guarantees made on diversification. Simply better 'odds' of suc
 		\hline
 		Mean & 2.19\%\\
 		Std Dev & 7.83\%\\
+		\hline
+	\end{tabular}
+\end{table}
+
+\begin{table}[H]
+	\centering
+	\caption{Mean and SD of returns on an equal-weighted portfolio --- Formulae}
+	\begin{tabular}{ |l||c| }
+		\hline
+		\multicolumn{2}{|c|}{Sheet1}\\
+		\hline
+		\multicolumn{2}{|c|}{Portfolio Characteristics}\\
+		\hline
+		Mean & \text{=AVERAGE(H3:H397)}\\
+		Std Dev & \text{=STDEV.S(H3:H397)}\\
 		\hline
 	\end{tabular}
 \end{table}
@@ -515,7 +562,33 @@ My response: "No guarantees made on diversification. Simply better 'odds' of suc
 	\end{tabular}
 \end{table}
 
+\begin{table}[H]
+	\centering
+	\caption{Correlations of monthly returns --- Formulae}
+	\begin{tabular}{ |p{2.5cm}||c| }
+		\hline
+		\multicolumn{2}{|c|}{Sheet1}\\
+		\hline
+		Company Pair & Correlation Coef\\
+		\hline
+		AAPL/MSFT & \text{=CORREL(C3:C397,E3:E397)} \\
+		MSFT/IBM & \text{=CORREL(E3:E397,G3:G397)} \\
+		AAPL/IBM & \text{=CORREL(C3:C397,G3:G397)} \\
+		\hline
+	\end{tabular}
+\end{table}
+
 \subsection{Performance---Risk and Reward}
-Spin a yarn when u feelin creative
+The portfolio's expected return is 2.19\% and a standard deviation of 7.83\%. This means our portfolio has the same expected return, however has a \textbf{lower risk} than the average of the three stocks.
+
+The portfolio expected return on 2.19\% is the same as the average of expected returns of the three individual stocks. It is greater than IBM's individual return (1.09\%) but lower than the returns of MSFT's and AAPL's (2.35\% and 3.12\% respectively). 
+
+However, when looking at risk, the portfolio's risk (SD$_{\text{portfolio}}$ = 7.83\%) is significantly lower than the average of the three individual stocks' risk (SD$_{\text{average of individuals}}$ = 10.08\%). Portfolio standard deviation of 7.83\% is around the same range as IBM's standard deviation of 7.6\% (IBM has the lowest standard deviation of the three stocks), and is significantly lower than that of MSFT or AAPL (9.88\% and 12.76\% respectively).
+
+Hence, it appears the portfolio exhibits a similar level of risk to the IBM stock but more than twice the return offered by IBM.
+
+Further, when looking at the correlation coefficients, they lie in the 0.3-0.45 range. These are quite far from a coefficient of 1 (perfect correlation) indicating weak to medium correlation. Hence, the stocks' prices don't move in perfect unison.
+
+Overall, the portfolio demonstrates the principle of diversification. By holding the three stocks in a portfolio (assuming no short positions), the average of their returns is maintained, but some of the idiosyncratic risk is diversified away, leading to a lower standard deviation.
 
 \end{document}
